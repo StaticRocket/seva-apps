@@ -1,0 +1,8 @@
+services:
+  gotify:
+    image: gotify/server-arm64:2.1.4
+    container_name: gotify
+    restart: on-failure:5
+    user: 65534:65534
+    ports:
+      - 8080:80

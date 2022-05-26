@@ -1,0 +1,6 @@
+{
+	"name": "Gotify",
+	"note": "A web interface is provided on port 8080",
+	"source_url": "https://github.com/gotify/server",
+	"has_web_interface": true
+}

@@ -1,0 +1,5 @@
+services:
+  app_thermostat_demo:
+    image: ghcr.io/nmenon/app_thermostat_demo:latest
+    container_name: app_thermostat_demo
+    restart: on-failure:5

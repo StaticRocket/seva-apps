@@ -3,3 +3,14 @@ services:
     image: ghcr.io/nmenon/app_thermostat_demo:latest
     container_name: app_thermostat_demo
     restart: on-failure:5
+    environment:
+      - XDG_RUNTIME_DIR=/tmp
+      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
+      - QT_QPA_PLATFORM=wayland
+    volumes:
+      - $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY
+      - /dev/dri:/dev/dri
+      - /dev/pvr_sync:/dev/pvr_sync
+    device_cgroup_rules:
+      - 'c 199:* rmw'
+      - 'c 226:* rmw'

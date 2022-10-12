@@ -5,10 +5,10 @@ services:
     restart: on-failure:5
     environment:
       - XDG_RUNTIME_DIR=/tmp
-      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
+      - WAYLAND_DISPLAY=wayland-0
       - QT_QPA_PLATFORM=wayland
     volumes:
-      - $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY
+      - /tmp/0-runtime-dir/wayland-0:/tmp/wayland-0
       - /dev/dri:/dev/dri
       - /dev/pvr_sync:/dev/pvr_sync
     device_cgroup_rules:
